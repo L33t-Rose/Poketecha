@@ -3,15 +3,16 @@ import type { PageServerLoad } from "./$types";
 import { PokemonStore, type Pokemon } from "$lib/util";
 
 async function addPokemonToCache(name:string){
-   console.log("fetching to the api")
+   console.log("fetching to the api");
    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+   if(!res.ok){
+      throw error(404);
+   }
    const data = await res.json() as Pokemon;
-
    PokemonStore.update((store)=> {
       store.set(name,data);
       return store;
-   })
-
+   });
    return data;
 }
 
@@ -28,7 +29,7 @@ export const load = (async ({ params }) => {
          res = data.get(name)!;
       }
    });
-   res ??= await addPokemonToCache("name");
    unsub();
+   res ??= await addPokemonToCache(name);
    return res;
 }) satisfies PageServerLoad;
