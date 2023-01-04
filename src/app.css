@@ -6,4 +6,10 @@
     .pixelated{
         image-rendering: pixelated;
     }
+
+    .border-reset{
+        border:none;
+        outline:none;
+        border-width:0;
+    }
 }
