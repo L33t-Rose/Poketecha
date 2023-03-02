@@ -22,3 +22,17 @@
 		alt="first"
 	/>
 </div>
+
+<style>
+	.animateY{
+		animation:spinY 2s linear infinite;
+	}
+	@keyframes spinY{
+		from{
+			transform:rotateY(0turn);
+		}
+		to{
+			transform:rotateY(1turn);
+		}
+	}
+</style>

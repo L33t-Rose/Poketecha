@@ -2,11 +2,9 @@
 	import "../app.css"
 </script>
 
-<div class="app">
-	<main>
+	<!-- <main> -->
 		<slot />
-	</main>
-</div>
+	<!-- </main> -->
 
 <style>
 	.app {
