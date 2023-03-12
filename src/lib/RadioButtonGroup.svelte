@@ -6,6 +6,8 @@
 	function handleChange(e) {
 		onChange(e.target.dataset.name);
 	}
+	let clazz: string = '';
+	export { clazz as class };
 </script>
 
 <div class="flex">
@@ -15,7 +17,7 @@
 			type="radio"
 			name="options"
 			data-name={button}
-			class="border-red-500 border rounded-none before:content-[attr(data-name)] appearance-none block text-red-500 px-2 py-1 checked:bg-red-500 checked:text-red-100 checked:font-bold first:rounded-l-md last:rounded-r-md"
+			class={`${clazz} border-red-500 border rounded-none before:content-[attr(data-name)] appearance-none block text-red-500 px-2 py-1 checked:bg-red-500 checked:text-red-100 checked:font-bold first:rounded-l-md last:rounded-r-md`}
 			checked={button === selectedButton}
 		/>
 	{/each}

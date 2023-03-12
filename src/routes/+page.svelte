@@ -9,4 +9,5 @@
 
 <section>
 	<button>Test</button>
+	<a href="/dex">Go To Dex</a>
 </section>

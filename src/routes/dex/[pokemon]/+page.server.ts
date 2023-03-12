@@ -10,6 +10,15 @@ async function addPokemonToCache(name:string){
       throw error(404);
    }
    const data = await res.json() as Pokemon;
+   const result = await Promise.allSettled(
+      data.abilities.map(async (abilityPrimitive) => {
+         const resp = await fetch(abilityPrimitive.ability.url);
+           const abilityData = await resp.json();
+           abilityPrimitive.ability = {...abilityPrimitive.ability,...abilityData.effect_entries[1]}
+           return abilityPrimitive;
+         // return fetch(abilityPrimitive.ability.url);
+      })
+   );
    PokemonStore.update((store)=> {
       store.set(name,data);
       return store;

@@ -4,7 +4,7 @@
 
 	export let data: PageData;
 	// console.log(data);
-	let { name } = data;
+	// let { name } = data;
 </script>
 
-<PokemonCard {data}/>
+<PokemonCard bind:data={data}/>

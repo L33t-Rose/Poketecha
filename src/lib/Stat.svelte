@@ -4,11 +4,11 @@
 </script>
 
 <div class="w-full flex">
-	<strong class="px-2 stat__label uppercase w-[8ch]">{label}</strong>
+	<strong class="px-2 stat__label uppercase w-[8ch] text-2xl">{label}</strong>
 	<div class="indicator-wrapper">
 		<div class="px-2 bg-red-600 h-full rounded" style={`width:${(value / 255) * 100}%`} />
 	</div>
-	<strong class="px-2 stat__value">{value}</strong>
+	<strong class="px-2 stat__value text-2xl">{value}</strong>
 </div>
 
 <style>

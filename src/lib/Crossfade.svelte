@@ -6,18 +6,18 @@
 	export { clazz as class };
 </script>
 
-<div class={`relative w-[100px] h-[100px] ${clazz}`}>
+<div class={`relative  ${clazz}`}>
 	<img
 		class={`transition-opacity w-full ease-linear duration-300 absolute top-0 left-0 opacity-0 ${
 			condition && 'opacity-100 z-[1]'
-		} pixelated`}
+		} pixelated object-cover`}
 		src={second}
 		alt="second"
 	/>
 	<img
 		class={`transition-opacity w-full ease-linear duration-300 ${
 			condition && 'opacity-0 z-0'
-		} absolute top-0 left-0 aas pixelated`}
+		} absolute top-0 left-0 aas pixelated object-cover`}
 		src={first}
 		alt="first"
 	/>
